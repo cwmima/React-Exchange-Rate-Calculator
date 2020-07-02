@@ -1,24 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import Calculator from './Components/Calculator/Calculator';
+import { IUserInput } from './Common/Interfaces';
+// import { createMuiTheme, MuiThemeProvider } from '@material-ui/core';
+
+// const theme = createMuiTheme({
+//   breakpoints: {
+//     values: {
+//       xs: 0,
+//       sm: 700,
+//       md: 960,
+//       lg: 1280,
+//       xl: 1920,
+//     },
+//   },
+// })
 
 function App() {
+  const [UserInput, setUserInput] = useState<IUserInput>({
+    BaseCurrency: "NZD",
+  });
+
+  const SetUserInput = (a: IUserInput) => setUserInput(a)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <MuiThemeProvider theme={theme}> */}
+        <Calculator SetUserInput={SetUserInput} />
+      {/* </MuiThemeProvider> */}
     </div>
   );
 }
