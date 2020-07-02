@@ -10,8 +10,8 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  rootDir: 'React-Exchange-Rate-Calculator'
-  buildDir: '$(rootDir)/build'
+  # rootDir: 'React-Exchange-Rate-Calculator'
+  buildDir: './build'
 
 steps:
 - task: NodeTool@0
@@ -20,7 +20,6 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    cd $(rootDir)
     pwd
     ls -l
     npm install
