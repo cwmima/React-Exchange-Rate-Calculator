@@ -7,7 +7,7 @@ trigger:
 - master
 
 variables:
-  rootDir: 'react-exchange-rate-calculator'
+  rootDir: 'React-Exchange-Rate-Calculator'
   buildDir: '$(rootDir)/build'
 
 pool:
