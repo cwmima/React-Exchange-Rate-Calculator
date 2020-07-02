@@ -6,12 +6,12 @@
 trigger:
 - master
 
+pool:
+  vmImage: 'ubuntu-latest'
+
 variables:
   rootDir: 'React-Exchange-Rate-Calculator'
   buildDir: '$(rootDir)/build'
-
-pool:
-  vmImage: 'ubuntu-latest'
 
 steps:
 - task: NodeTool@0
@@ -21,6 +21,8 @@ steps:
 
 - script: |
     cd $(rootDir)
+    pwd
+    ls -l
     npm install
     npm install @material-ui/core
     npm run build
